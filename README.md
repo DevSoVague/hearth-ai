@@ -1,4 +1,4 @@
-# Gemma4: Local-First Chat, Coding Agent, and Live Coach
+# Hearth AI: Local-First Chat, Coding Agent, and Live Coach
 
 Two local-first web apps for models running in Ollama on your own machine: a chat client with a sandboxed, approval-gated coding agent, and a live conversation coach that transcribes your mic locally with Whisper.
 
@@ -43,8 +43,8 @@ All app logic (rendering, providers, context assembly, the tool loop) lives in t
 Requirements: macOS (agent shell commands need `sandbox-exec`; the rest works elsewhere), Python 3.10+, [Ollama](https://ollama.com), and `ffmpeg` for Gemma Coach (`brew install ffmpeg`).
 
 ```bash
-git clone https://github.com/DevSoVague/gemma4-local-agent.git
-cd gemma4-local-agent
+git clone https://github.com/DevSoVague/hearth-ai.git
+cd hearth-ai
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt     # Chat alone only needs: pip install flask
 ```
@@ -94,7 +94,7 @@ No benchmark results; this is an application, not a model. Fixed settings from t
 ## Project structure
 
 ```
-gemma4-local-agent/
+hearth-ai/
 ├── app/
 │   ├── gemma-chat.html       # Chat app: UI, providers, context, agent + reflect loops
 │   ├── gemma-server.py       # Flask: serves Chat, /api/agent/*, /api/sessions

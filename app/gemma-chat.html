@@ -686,7 +686,7 @@ button,input,select,textarea{font-family:inherit}
           <div class="help-q-tip">
             <strong>Ollama not connecting?</strong> Easiest: quit this tab and double-click <strong>Gemma Chat.command</strong> — it starts Ollama and reopens the app for you.
             Or in Terminal:
-            <code>cd path/to/gemma4-local-agent/app
+            <code>cd path/to/hearth-ai/app
 bash launch-gemma.sh</code>
             Leave that window open while you chat.
             <br><br>
@@ -698,7 +698,7 @@ pkill -f 'ollama serve'</code>
             In file:// mode, saving history to disk and Agent tools also need the helper server running (<code>bash launch-gemma.sh</code>); without it the app still chats and falls back to browser storage.
             <br><br>
             <strong>Choosing the model yourself, from Terminal.</strong> The launcher asks which runtime to use — <code>1</code>/<code>2</code> for Ollama (GGUF), <code>3</code> for MLX (LM Studio). It unloads the others first, because 24GB fits only one 27B at a time:
-            <code>cd path/to/gemma4-local-agent/app
+            <code>cd path/to/hearth-ai/app
 bash launch-gemma.sh</code>
             <strong>Or drive each runtime directly:</strong>
             <code># --- Ollama (GGUF) — appears in the OLLAMA tab ---
@@ -719,7 +719,7 @@ lms unload --all                     # free the memory</code>
             <br><br>
             <strong>Nothing runs unless you start it.</strong> Opening this page does not launch anything. If no model shows up, that is expected — start one from Terminal first. Ctrl+C in the launcher always unloads the model.
             <code># STOP EVERYTHING (models, both servers, page server)
-cd path/to/gemma4-local-agent/app
+cd path/to/hearth-ai/app
 bash stop-gemma.sh</code>
             <code># --- Ollama: start / stop ---
 ollama serve &amp;                      # start the server
