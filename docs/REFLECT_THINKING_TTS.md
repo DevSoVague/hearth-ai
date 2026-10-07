@@ -294,7 +294,7 @@ the numeric threshold is enough to pass.
 ```js
 let reflectConfig = {
   solverProvider: 'ollama',  solverModel: '',                                  // local, free
-  judgeProvider: 'custom',   judgeModel: 'claude-sonnet-4-20250514-v1:0',      // cloud, stronger
+  judgeProvider: 'custom',   judgeModel: 'claude-sonnet-4-20250514',           // cloud, stronger
   maxIter: 5, threshold: 80, judgePrompt: ''
 };
 ```

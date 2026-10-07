@@ -84,8 +84,8 @@ loading (can take a while on first run - it downloads weights).
   models mid-conversation from the header dropdown. Also polls Ollama's
   `/api/ps` every second to show a color-coded **VRAM bar** (green → yellow
   → red as you approach your limit).
-- **Custom API (Anthropic-compatible)** - any base URL + API key, e.g. the
-  CMU AI Gateway, OpenRouter, or Anthropic directly. Add/remove named
+- **Custom API (Anthropic-compatible)** - any base URL + API key, e.g.
+  Anthropic directly (default `https://api.anthropic.com`) or OpenRouter. Add/remove named
   models as chips.
 - **OpenAI-Compatible API** - any base URL + API key, e.g. OpenAI, Groq,
   Together, Fireworks. Same model-chip UI.

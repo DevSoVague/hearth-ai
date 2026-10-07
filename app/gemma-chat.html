@@ -752,11 +752,11 @@ lms ps</code>
     <!-- CUSTOM API (Anthropic-compatible) PANEL -->
     <div class="boot-provider-panel" id="boot-panel-custom">
       <label class="field-label">Base URL</label>
-      <input type="text" id="boot-custom-url" class="boot-input" placeholder="https://ai-gateway.andrew.cmu.edu">
+      <input type="text" id="boot-custom-url" class="boot-input" placeholder="https://api.anthropic.com">
       <label class="field-label">API Key</label>
-      <input type="password" id="boot-custom-key" class="boot-input" placeholder="sk-...">
+      <input type="password" id="boot-custom-key" class="boot-input" placeholder="API key (stored in this browser only)">
       <label class="field-label">Model</label>
-      <input type="text" id="boot-custom-model" class="boot-input" placeholder="claude-sonnet-4-20250514-v1:0" style="margin-bottom:20px">
+      <input type="text" id="boot-custom-model" class="boot-input" placeholder="claude-sonnet-4-20250514" style="margin-bottom:20px">
     </div>
 
     <!-- OPENAI-COMPATIBLE PANEL -->
@@ -764,7 +764,7 @@ lms ps</code>
       <label class="field-label">Base URL</label>
       <input type="text" id="boot-openai-url" class="boot-input" placeholder="https://api.openai.com/v1">
       <label class="field-label">API Key</label>
-      <input type="password" id="boot-openai-key" class="boot-input" placeholder="sk-...">
+      <input type="password" id="boot-openai-key" class="boot-input" placeholder="API key (stored in this browser only)">
       <label class="field-label">Model</label>
       <input type="text" id="boot-openai-model" class="boot-input" placeholder="gpt-5" style="margin-bottom:10px">
       <button class="hbtn" onclick="useLMStudio()" style="margin-bottom:20px;width:100%" title="Point at the LM Studio server on :1234 and list its loaded models">⌁ Use LM Studio (local MLX) — no API key needed</button>
@@ -1053,12 +1053,12 @@ lms ps</code>
         <div class="settings-section-title">Ollama (Local)</div>
         <div class="sp-hint" style="margin-top:0;margin-bottom:8px">Already configured from boot screen. Models auto-detected.</div>
       </div>
-      <!-- CMU Gateway / Custom Anthropic-compatible -->
+      <!-- Custom Anthropic-compatible -->
       <div class="settings-section">
         <div class="settings-section-title">Custom API (Anthropic-compatible)</div>
-        <div class="sp-hint" style="margin-top:0;margin-bottom:10px">For CMU AI Gateway, OpenRouter, or any Anthropic-compatible endpoint.</div>
-        <div class="settings-row"><label>Base URL</label><input type="text" id="prov-custom-url" style="width:280px;text-align:left" placeholder="https://ai-gateway.andrew.cmu.edu"></div>
-        <div class="settings-row"><label>API Key</label><input type="password" id="prov-custom-key" style="width:280px;text-align:left" placeholder="sk-..."></div>
+        <div class="sp-hint" style="margin-top:0;margin-bottom:10px">For Anthropic, OpenRouter, or any Anthropic-compatible endpoint.</div>
+        <div class="settings-row"><label>Base URL</label><input type="text" id="prov-custom-url" style="width:280px;text-align:left" placeholder="https://api.anthropic.com"></div>
+        <div class="settings-row"><label>API Key</label><input type="password" id="prov-custom-key" style="width:280px;text-align:left" placeholder="API key (stored in this browser only)"></div>
         <div class="settings-row" style="flex-direction:column;align-items:stretch;gap:6px">
           <label>Models</label>
           <div style="display:flex;gap:6px">
@@ -1073,7 +1073,7 @@ lms ps</code>
         <div class="settings-section-title">OpenAI-Compatible API</div>
         <div class="sp-hint" style="margin-top:0;margin-bottom:10px">For OpenAI, Groq, Together, Fireworks, or any OpenAI-compatible endpoint.</div>
         <div class="settings-row"><label>Base URL</label><input type="text" id="prov-openai-url" style="width:280px;text-align:left" placeholder="https://api.openai.com/v1"></div>
-        <div class="settings-row"><label>API Key</label><input type="password" id="prov-openai-key" style="width:280px;text-align:left" placeholder="sk-..."></div>
+        <div class="settings-row"><label>API Key</label><input type="password" id="prov-openai-key" style="width:280px;text-align:left" placeholder="API key (stored in this browser only)"></div>
         <div class="settings-row" style="flex-direction:column;align-items:stretch;gap:6px">
           <label>Models</label>
           <div style="display:flex;gap:6px">
@@ -1176,9 +1176,9 @@ lms ps</code>
       <div class="settings-section">
         <div class="settings-section-title">API Keys (for Judge/Solver)</div>
         <div class="sp-hint" style="margin-top:0;margin-bottom:8px">Enter keys for whichever provider you select below. Saved to localStorage.</div>
-        <div class="settings-row"><label>Custom API Key</label><input type="password" id="reflect-custom-key" style="width:240px;text-align:left" placeholder="sk-..."></div>
-        <div class="settings-row"><label>Custom Base URL</label><input type="text" id="reflect-custom-url" style="width:240px;text-align:left" placeholder="https://ai-gateway.andrew.cmu.edu"></div>
-        <div class="settings-row"><label>OpenAI API Key</label><input type="password" id="reflect-openai-key" style="width:240px;text-align:left" placeholder="sk-..."></div>
+        <div class="settings-row"><label>Custom API Key</label><input type="password" id="reflect-custom-key" style="width:240px;text-align:left" placeholder="API key (stored in this browser only)"></div>
+        <div class="settings-row"><label>Custom Base URL</label><input type="text" id="reflect-custom-url" style="width:240px;text-align:left" placeholder="https://api.anthropic.com"></div>
+        <div class="settings-row"><label>OpenAI API Key</label><input type="password" id="reflect-openai-key" style="width:240px;text-align:left" placeholder="API key (stored in this browser only)"></div>
         <div class="settings-row"><label>OpenAI Base URL</label><input type="text" id="reflect-openai-url" style="width:240px;text-align:left" placeholder="https://api.openai.com/v1"></div>
       </div>
 
@@ -2727,7 +2727,7 @@ async function streamAnthropic({model,systemContent,neutralMessages,tools,genPar
 
   const resp=await fetch(providers.custom.url+'/v1/messages',{
     method:'POST',
-    headers:{'Content-Type':'application/json','x-api-key':key,'api-key':key,'Authorization':'Bearer '+key,'anthropic-version':'2023-06-01'},
+    headers:{'Content-Type':'application/json','x-api-key':key,'api-key':key,'Authorization':'Bearer '+key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
     body:JSON.stringify(body),signal
   });
   if(!resp.ok){const err=await resp.text();throw new Error('Custom API error: '+err);}
@@ -3925,13 +3925,13 @@ function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrol
 const PROVIDERS_KEY='gemma_providers';
 const REFLECT_KEY='gemma_reflect';
 let providers={
-  custom:{url:'https://ai-gateway.andrew.cmu.edu',key:'',models:['claude-haiku-4-5-20251001-v1:0','claude-opus-4-20250514-v1:0','claude-sonnet-4-20250514-v1:0','gemini-2.5-flash','gpt-5.4-pro','gpt-5']},
+  custom:{url:'https://api.anthropic.com',key:'',models:['claude-haiku-4-5-20251001','claude-opus-4-20250514','claude-sonnet-4-20250514']},
   openai:{url:'https://api.openai.com/v1',key:'',models:[]}
 };
 let reflectConfig={
   enabled:false,
   solverProvider:'ollama',solverModel:'',
-  judgeProvider:'custom',judgeModel:'claude-sonnet-4-20250514-v1:0',
+  judgeProvider:'custom',judgeModel:'claude-sonnet-4-20250514',
   maxIter:5,threshold:80,judgePrompt:''
 };
 
@@ -4100,7 +4100,8 @@ async function callLLM(provider,model,messages,opts={}){
         'x-api-key':key,
         'api-key':key,
         'Authorization':'Bearer '+key,
-        'anthropic-version':'2023-06-01'
+        'anthropic-version':'2023-06-01',
+        'anthropic-dangerous-direct-browser-access':'true'
       },
       body:JSON.stringify(body),signal:opts.signal
     });
