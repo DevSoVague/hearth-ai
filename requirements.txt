@@ -1,0 +1,8 @@
+# Gemma Chat (gemma-server.py + agent_tools.py): only Flask beyond the stdlib
+flask>=3.0
+
+# Gemma Coach (coach-server.py): local Whisper transcription
+# Also needs the ffmpeg binary on PATH (macOS: brew install ffmpeg)
+numpy>=1.26
+torch>=2.3
+openai-whisper>=20240930

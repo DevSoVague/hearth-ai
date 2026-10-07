@@ -1,0 +1,45 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Secrets (never commit)
+.env
+.env.*
+!.env.example
+.Renviron
+Renviron
+*credentials*.json
+token.json
+service-account*.json
+*.pem
+somecommands*.txt
+
+# Data, models, build artifacts (fetch via scripts / Releases)
+data/
+*.joblib
+*.pt
+*.pth
+*.npz
+*.npy
+*.parquet
+*.zip
+*.gz
+.terraform/
+*.tfstate*
+*.log
+
+# Runtime state written by the apps (local only)
+app/agent_config.json
+app/chat-history/
+.gemma_agent/
+*.bak*
