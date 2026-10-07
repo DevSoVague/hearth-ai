@@ -71,7 +71,7 @@ bash app/launch-coach.sh
 
 **Stop everything** (unloads models, stops Ollama, LM Studio, and the page server): `bash app/stop-gemma.sh`.
 
-Environment variables (all optional, no secrets): `PYTHON` picks the interpreter the launchers use (default: `python3` from the active venv); `CONDA_ENV` makes `launch-coach.sh` activate a conda env instead. API keys for remote providers are entered in the Chat UI, not in files. To use the agent, enable Agent mode in Chat settings and paste an absolute project path.
+Environment variables (all optional, no secrets): `PYTHON` picks the interpreter the launchers use (default: `python3` from the active venv); `CONDA_ENV` makes `launch-coach.sh` activate a conda env instead; `WHISPER_MODEL` swaps Gemma Coach's Whisper model (default `large-v3`; `small.en` or `tiny.en` start much faster on smaller machines). API keys for remote providers are entered in the Chat UI, not in files. To use the agent, enable Agent mode in Chat settings and paste an absolute project path.
 
 ## Data
 

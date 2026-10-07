@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # ============================ CONFIG — edit this ============================
-MODEL         = "large-v3"   # best quality. Faster English fallback: "medium.en" / "small.en"
+import os as _os
+MODEL         = _os.environ.get("WHISPER_MODEL", "large-v3")   # best quality. Faster English fallback: "medium.en" / "small.en"
 LANGUAGE      = "en"
 PORT          = 9091
 HTML_FILE     = "gemma-coach.html"
